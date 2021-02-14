@@ -9,7 +9,7 @@ def text_print2(text):
 
 class ExampleSandboxFunctionsPluginFactory(PyriSandboxFunctionsPluginFactory):
     def get_plugin_name(self):
-        return "pyri_example_plugin"
+        return "pyri-example-plugin"
 
     def get_sandbox_function_names(self):
         return ["text_print2"]

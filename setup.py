@@ -20,6 +20,7 @@ setup(
     },
     entry_points = {
         'pyri.plugins.sandbox_functions': ['pyri-example-plugin-functions=pyri_example_plugin.sandbox_functions:get_sandbox_functions_factory'],
-        'pyri.plugins.blockly': ['pyri-example-plugin-blockly=pyri_example_plugin.blockly:get_blockly_factory']
+        'pyri.plugins.blockly': ['pyri-example-plugin-blockly=pyri_example_plugin.blockly:get_blockly_factory'],
+        'pyri.plugins.webui_server': ['pyri-example-plugin-webui-server=pyri_example_plugin.webui_server:get_webui_factory']
     }
 )

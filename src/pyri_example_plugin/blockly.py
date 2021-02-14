@@ -22,7 +22,7 @@ def _get_blocks() -> Dict[str,PyriBlocklyBlock]:
 
 class ExampleBlocklyPluginFactory(PyriBlocklyPluginFactory):
     def get_plugin_name(self):
-        return "pyri_example_plugin"
+        return "pyri-example-plugin"
 
     def get_category_names(self) -> List[str]:
         return []
