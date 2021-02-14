@@ -19,6 +19,7 @@ setup(
         'test': ['pytest','pytest-asyncio']
     },
     entry_points = {
-        'pyri.plugins.factory': ['pyri-example-plugin=pyri_example_plugin.factory:get_factory']
+        'pyri.plugins.sandbox_functions': ['pyri-example-plugin-functions=pyri_example_plugin.sandbox_functions:get_sandbox_functions_factory'],
+        'pyri.plugins.blockly': ['pyri-example-plugin-blockly=pyri_example_plugin.blockly:get_blockly_factory']
     }
 )
