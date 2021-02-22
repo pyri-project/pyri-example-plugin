@@ -6,7 +6,7 @@ def _get_blocks() -> Dict[str,PyriBlocklyBlock]:
 
     blocks["text_print2"] = PyriBlocklyBlock(
         name = "text_print2",
-        category = "Text",
+        category = "Example",
         doc = "This is a test print() function",
         json = '{ "type": "text_print2", "message0": "print2 %1", "args0": [ { "type": "input_value", "name": "TEXT" } ],"previousStatement": null, "nextStatement": null,"colour": 230,"tooltip": "","helpUrl": ""}',
         python_generator = """Blockly.Python['text_print2'] = function(block) {
@@ -19,16 +19,25 @@ def _get_blocks() -> Dict[str,PyriBlocklyBlock]:
 
     return blocks
 
+def _get_categories() -> Dict[str,PyriBlocklyCategory]:
+    categories = {}
+    categories["Examples"] = PyriBlocklyCategory(
+        name = "Example",
+        json = '{"kind": "category", "name": "Example", "colour": 230 }'
+    )
+
+    return categories
+
 
 class ExampleBlocklyPluginFactory(PyriBlocklyPluginFactory):
     def get_plugin_name(self):
         return "pyri-example-plugin"
 
     def get_category_names(self) -> List[str]:
-        return []
+        return ["Example"]
 
     def get_categories(self) -> List[PyriBlocklyCategory]:
-        return []
+        return _get_categories()
 
     def get_block_names(self) -> List[str]:
         return ["text_print2"]
