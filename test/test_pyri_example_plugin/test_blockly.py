@@ -1,15 +1,5 @@
-from pyri.sandbox import blockly_compiler
-import io
+from pyri.sandbox.util import run_blockly_compile_test
 
-def _do_blockly_compile_test(blockly_json, expected_pysrc):
-    json_io = io.StringIO(blockly_json)
-    output_io = io.StringIO()
-
-    blockly_compiler.compile_blockly_file(json_io, output_io)
-    output_io.seek(0)
-    pysrc_str = output_io.read()
-    print(pysrc_str)
-    assert pysrc_str == expected_pysrc
 
 def test_blockly_compiler_print2():
     print2_blockly_json = \
@@ -60,4 +50,4 @@ def test_blockly_compiler_print2():
 """
     expected_pysrc = "# Describe this function...\ndef test_text_print2():\n  text_print2('test text_print2')\n"
 
-    _do_blockly_compile_test(print2_blockly_json, expected_pysrc)
+    run_blockly_compile_test(print2_blockly_json, expected_pysrc)
