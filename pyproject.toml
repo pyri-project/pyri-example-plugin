@@ -1,0 +1,47 @@
+[project]
+
+name = "pyri-example-plugin"
+version = "0.1.0"
+description = "PyRI Teach Pendant Example Plugin"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE.txt"}
+keywords = ["pyodide", "pyri-project", "pyri-runtime-package", "robotics"]
+authors = [
+    {name = "John Wason", email = "wason@wasontech.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Scientific/Engineering"
+]
+
+dependencies = [
+    'pyri-core'
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-asyncio"
+]
+
+[project.urls]
+homepage="http://pyri.tech"
+repository="https://github.com/pyri-project/pyri-example-plugin"
+
+[project.entry-points."pyri.plugins.sandbox_functions"]
+pyri-example-plugin-functions = "pyri_example_plugin.sandbox_functions:get_sandbox_functions_factory"
+
+[project.entry-points."pyri.plugins.blockly"]
+pyri-example-plugin-blockly = "pyri_example_plugin.blockly:get_blockly_factory"
+
+[project.entry-points."pyri.plugins.webui_server"]
+pyri-example-plugin-webui-server = "pyri_example_plugin.webui_server:get_webui_factory"
+
+[build-system]
+build-backend = 'setuptools.build_meta'
+requires = [
+    'setuptools',
+    'toml',
+]
